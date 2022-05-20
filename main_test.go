@@ -9,3 +9,7 @@ func TestShift(t *testing.T) {
 		t.Errorf("Unexpected result: %s", buffer.String())
 	}
 }
+
+func BenchmarkApplication(t *testing.B) {
+	main()
+}

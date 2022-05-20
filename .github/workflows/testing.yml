@@ -3,7 +3,7 @@ on:
     branches:
       - main
 
-name: "Unit Tests"
+name: "Testing"
 jobs:
   tests:
     runs-on: ubuntu-latest
@@ -11,3 +11,5 @@ jobs:
       - uses: actions/checkout@v3
       - name: "Run Tests"
         run: go test
+      - name: "Run Benchmark"
+        run: go test -bench=.
