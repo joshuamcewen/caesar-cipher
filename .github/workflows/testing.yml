@@ -12,4 +12,4 @@ jobs:
       - name: "Run Tests"
         run: go test
       - name: "Run Benchmark"
-        run: go test -bench=.
+        run: time ./main

@@ -4,13 +4,10 @@ import (
 	"bytes"
 	"fmt"
 	"os"
-	"time"
 )
 
 func main() {
 	filename := "prideAndPrejudice"
-
-	start := time.Now()
 	data, err := os.ReadFile(fmt.Sprintf("%s.txt", filename))
 
 	if err != nil {
@@ -22,8 +19,6 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
-	elapsed := time.Since(start)
-	fmt.Printf("Execution: %s\n", elapsed)
 }
 
 func shift(b []byte) *bytes.Buffer {
