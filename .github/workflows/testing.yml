@@ -11,5 +11,7 @@ jobs:
       - uses: actions/checkout@v3
       - name: "Run Tests"
         run: go test
+      - name: "Build Executable"
+        run: go build main.go
       - name: "Run Benchmark"
         run: time ./main
