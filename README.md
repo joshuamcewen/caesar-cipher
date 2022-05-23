@@ -17,4 +17,5 @@ I've committed an executable `main`, should you want to run without installing G
 
 ### Running Benchmarks
 
-1. Run `time ./main`
+A start time is recording after the file has been read, and an elapsed time is calculated after the contents has been
+shifted. The elapsed time is outputted to stdout.

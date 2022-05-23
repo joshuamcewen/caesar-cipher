@@ -4,6 +4,7 @@ import (
 	"bytes"
 	"fmt"
 	"os"
+	"time"
 )
 
 func main() {
@@ -14,7 +15,13 @@ func main() {
 		panic(err)
 	}
 
+	start := time.Now()
+
 	buffer := shift(data)
+
+	elapsed := time.Since(start)
+	fmt.Printf("Elapsed: %s", elapsed)
+
 	err = os.WriteFile(fmt.Sprintf("%s.txt", shift([]byte(filename))), buffer.Bytes(), 0644)
 	if err != nil {
 		panic(err)
