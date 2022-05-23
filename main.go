@@ -35,18 +35,21 @@ func shift(b []byte) *bytes.Buffer {
 		isUppercase := b >= 'A' && b <= 'Z'
 		isLowercase := b >= 'a' && b <= 'z'
 
-		if isUppercase || isLowercase {
-			var z byte = 'z'
-			if isUppercase {
-				z = 'Z'
-			}
-
-			b = b + 2
-
-			if b > z {
-				b = b - 26
-			}
+		if !isLowercase && !isUppercase {
+			continue
 		}
+
+		var z byte = 'z'
+		if isUppercase {
+			z = 'Z'
+		}
+
+		b = b + 2
+
+		if b > z {
+			b = b - 26
+		}
+
 		buffer.WriteByte(b)
 	}
 	return buffer
